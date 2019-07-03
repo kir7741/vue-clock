@@ -45,8 +45,16 @@ export default {
         const nowMin = date.getMinutes();
         const nowSec = date.getSeconds();
 
-        // 計算角度
-        this.hourDeg = 360 / 12 * nowHr;
+        // 計算時針角度時，需額外計算分針所帶來的角度偏移
+        const hourDeg = 360 / 12 * nowHr;
+
+        // 時針，每小時間隔 30度
+        const hourScale = 360 / 12;
+
+        // 取得額外的時針角度
+        const extraHourDeg = Math.ceil(hourScale * (nowMin / 60));
+
+        this.hourDeg = hourDeg + extraHourDeg;
         this.minuteDeg = 360 / 60 * nowMin;
         this.secondDeg = 360 / 60 * nowSec - 180;
 
