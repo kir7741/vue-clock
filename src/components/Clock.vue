@@ -76,7 +76,6 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
 }
- 
 .wrapper {
   display: flex;
   justify-content: center;
@@ -123,10 +122,10 @@ export default {
   }
   &.second {
     margin: 0 auto;
-    width: 8px;
+    width: 12px;
     &:before {
       @include hand('../assets/images/second-hand.svg');
-      width: 8px;
+      width: 12px;
       height: 120px;
       left: 50%;
       bottom: 0;
